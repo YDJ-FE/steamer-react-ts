@@ -41,3 +41,33 @@ $ str kit
     - qshell.*.json 
     - ./config/steamer.config.js
 
+
+## File Tree
+
+[click here](./tree.md)
+
+
+## css 
+
+default as _css-module_ with _scss_
+
+your can also use any lanuage if you like, e.g. `less`, `stylus`, also with `styled-components`, `scss-bem`
+
+[details](./css.md)
+
+## js
+
+only support typescript
+
+[details](./js.md)
+
+## state manager
+
+default as redux
+
+it will be support mobx a few days later
+
+[details](./store.md)
+
+
+
