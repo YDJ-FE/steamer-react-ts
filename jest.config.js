@@ -4,7 +4,6 @@ module.exports = {
     "\\.(css|scss)$": "identity-obj-proxy"
   },
   transform: {
-    "^.+\\.js$": "babel-jest",
     "^.+\\.tsx?$": "ts-jest"
   },
   testMatch: [
