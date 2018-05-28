@@ -7,9 +7,7 @@
         "build:qa": "cross-env NODE_ENV=production APP_ENV=qa node ./tools/script.js",
         "deploy:qa": "npm run build:qa && qshell qupload ./qshell.qa.json",
         "build:prod": "cross-env NODE_ENV=production APP_ENV=prod node ./tools/script.js",
-        "deploy:prod": "npm run build:prod && qshell qupload ./qshell.prod.json",
-        "test": "jest",
-        "coverage": "jest --coverage"
+        "deploy:prod": "npm run build:prod && qshell qupload ./qshell.prod.json"
     },
     "main": "./.steamer/steamer-react-redux-ts.js",
     "keywords": [
@@ -20,8 +18,6 @@
         "axios": "^0.18.0",
         "blueimp-md5": "^2.10.0",
         "bourbon": "^5.0.0",
-        "enzyme": "^3.3.0",
-        "jest": "^22.4.4",
         "lodash": "^4.17.10",
         "moment": "^2.22.1",
         "offline-plugin": "^5.0.3",
@@ -41,8 +37,6 @@
         "styled-components": "^3.2.6"
     },
     "devDependencies": {
-        "@types/enzyme": "^3.1.10",
-        "@types/jest": "^22.2.3",
         "@types/lodash": "^4.14.109",
         "@types/node": "^10.0.4",
         "@types/react": "^16.3.13",
@@ -60,7 +54,6 @@
         "copy-webpack-plugin-hash": "^6.0.0",
         "cross-env": "^5.1.4",
         "css-loader": "^0.28.11",
-        "enzyme-adapter-react-15": "^1.0.5",
         "exports-loader": "^0.7.0",
         "expose-loader": "^0.7.5",
         "express": "^4.16.3",
@@ -106,6 +99,6 @@
     },
     "peerDependencies": {},
     "engines": {
-        "node": ">=6.10.0"
+        "node": ">=8.9.4"
     }
 }
