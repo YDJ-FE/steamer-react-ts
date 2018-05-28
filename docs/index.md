@@ -39,32 +39,32 @@
 
 
 
-## File Tree
+## 文件目录
 
-[click here](./tree.md)
+[点击跳转](./tree.md)
 
 
 ## css 
 
-default as _css-module_ with _scss_
+默认使用 as _css-module_ 和 _scss_
 
-your can also use any lanuage if you like, e.g. `less`, `stylus`, also with `styled-components`, `scss-bem`
+你也可以使用你喜欢的预处理语言和模块化方式, e.g. `less`, `stylus`, 又或者`styled-components`, `scss-bem`
 
-[details](./css.md)
+[详情点击](./css.md)
 
 ## js
 
-only support typescript
+目前仅支持typescript,如果需要js，推荐[steamer-react](https://github.com/steamerjs/steamer-react)官方脚手架
 
-[details](./js.md)
+[详情点击](./js.md)
 
-## state manager
+## 状态管理
 
-default as redux
+默认使用redux
 
-it will be support mobx a few days later
+未来可能会支持mobx选择
 
-[details](./store.md)
+[详情点击](./store.md)
 
 
 
