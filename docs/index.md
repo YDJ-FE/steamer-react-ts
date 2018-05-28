@@ -1,45 +1,42 @@
 
 
 
-## USAGE
+## 使用
 
-- make sure your `steamerjs` & `steamer-plugin-kit` package was installed
+- 确保你本地已经成功全局安装 `steamerjs`和 `steamer-plugin-ykit` 两个包
 
-- install `steamerjs` with that
+    ``` shell
+    $ npm i -g steamerjs@latest steamer-plugin-ykit@latest
+    ```
 
-``` shell
-$ npm i -g steamerjs steamer-plugin-kit
-```
+        注意： 这个教授叫依赖的steamerjs和steamer-plugin-ykit版本>=3.0.0
 
-- install this kit project via `npm`
+- 安装脚手架
 
-``` shell
-$ npm i -g steamer-react-react-redux-ts
-```
+    ``` shell
+    $ str ykit --add https://github.com/YDJ-FE/steamer-react-redux-ts.git
 
-or via git clone & `npm link`
+- 创建项目
 
-``` shell
-$ git clone git@github.com:YDJ-FE/steamer-react-redux-ts.git && cd steamer-react-redux-ts && npm link
-```
+    ``` shell
+    $ str ykit 
+    # 选择脚手架，版本，按引导一步一步输入项目信息
 
-- create project 
+    # 创建完成后，部分文件可能根据实际情况修改一些配置信息，
+    # 比如qshell.*.json, package.json, config/project.js等等
+    ```
 
-``` shell
-$ cd yourProjectsDirname
+- 更新脚手架
 
-$ str kit 
+    ``` shell
+    $ str ykit -u --global
+    ```
+-更新脚手架到项目
+   ``` shell
+   # cd 到你项目根目录
+   $ str ykit -u
+   ``` 
 
-# and then tap the value step by step
-```
-
-
-- replace some content 
-    
-    - REAMEMD.md
-    - package.json with the project name & description
-    - qshell.*.json 
-    - ./config/steamer.config.js
 
 
 ## File Tree
