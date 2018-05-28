@@ -18,7 +18,7 @@ module.exports = {
     ],
     beforeCopy: function(answers, folderPath) {
         if(!!answers.jest) {
-            this.files.push('test')
+            exports.files.push('test')
         }
     },
     beforeInstall: function(answers, folderPath) {
