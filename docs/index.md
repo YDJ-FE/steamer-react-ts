@@ -60,8 +60,6 @@
 
 默认使用redux
 
-默认使用redux
-
 未来可能会支持mobx选择
 
 [详情点击](./store.md)
