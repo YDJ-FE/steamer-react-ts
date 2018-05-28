@@ -1,3 +1,6 @@
+const fs = require('fs');
+const path = require('path');
+
 
 const files = [
     "config",
@@ -40,6 +43,7 @@ module.exports = {
                 test: "jest",
                 coverage: "jest --coverage"
             });
+            fs.writeFileSync(path.join(folderPath, 'package.json'), JSON.stringify(pkg, null, 4), 'utf-8');
         }
     },
     options: [
