@@ -1,6 +1,6 @@
 {
     "name": "steamer-react-redux-ts",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "伊的家 react+redux+ts脚手架",
     "scripts": {
         "dev": "cross-env NODE_ENV=development node ./tools/script.js",
