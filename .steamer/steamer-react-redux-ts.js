@@ -1,24 +1,27 @@
+
+const files = [
+    "config",
+    "src",
+    "tools",
+    "typings",
+    ".gitignore",
+    ".npmrc",
+    ".stylelintignore",
+    ".stylelintrc.js",
+    "package.json",
+    "postcss.config.js",
+    "qshell.json",
+    "qshell.prod.json",
+    "README.md",
+    "tsconfig.json",
+    "tslint.json"
+]
+
 module.exports = {
-    files: [
-        "config",
-        "src",
-        "tools",
-        "typings",
-        ".gitignore",
-        ".npmrc",
-        ".stylelintignore",
-        ".stylelintrc.js",
-        "package.json",
-        "postcss.config.js",
-        "qshell.json",
-        "qshell.prod.json",
-        "README.md",
-        "tsconfig.json",
-        "tslint.json"
-    ],
+    files: files,
     beforeCopy: function(answers, folderPath) {
         if(!!answers.jest) {
-            exports.files.push('test')
+            files.push('test')
         }
     },
     beforeInstall: function(answers, folderPath) {
