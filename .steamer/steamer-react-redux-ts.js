@@ -24,7 +24,7 @@ module.exports = {
     files: files,
     beforeCopy: function(answers, folderPath) {
         if(!!answers.jest) {
-            files.push('test')
+            files.push('test', 'jest.config.js')
         }
     },
     beforeInstall: function(answers, folderPath) {
@@ -37,7 +37,7 @@ module.exports = {
             pkg.devDependencies = Object.assign({}, pkg.devDependencies, {
                 "@types/enzyme": "^3.1.10",
                 "@types/jest": "^22.2.3",
-                "enzyme-adapter-react-15": "^1.0.5"
+                "enzyme-adapter-react-16": "^1.1.1",
             });
             pkg.scripts = Object.assign({}, pkg.scripts, {
                 test: "jest",
