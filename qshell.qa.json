@@ -1,7 +1,7 @@
 {
     "src_dir": "./dist/cdn",
     "bucket": "ydj-statics",
-    "key_prefix": "projectName/dist/qa/",
+    "key_prefix": "<% projectName %>/dist/qa/",
     "ignore_dir": false,
     "overwrite": false,
     "check_exists": false,

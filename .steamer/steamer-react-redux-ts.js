@@ -13,7 +13,7 @@ const files = [
     '.stylelintrc.js',
     'package.json',
     'postcss.config.js',
-    'qshell.json',
+    'qshell.qa.json',
     'qshell.prod.json',
     'README.md',
     'tsconfig.json',
@@ -22,12 +22,12 @@ const files = [
 
 module.exports = {
     files: files,
-    beforeCopy: function(answers, folderPath) {
+    beforeInstallCopy: function(answers, folderPath) {
         if (!!answers.jest) {
             files.push('test', 'jest.config.js')
         }
     },
-    beforeInstall: function(answers, folderPath) {
+    beforeInstallDep: function(answers, folderPath) {
         if (!!answers.jest) {
             let pkg = this.getPkgJson(folderPath)
             pkg.dependencies = Object.assign({}, pkg.dependencies, {
@@ -51,7 +51,7 @@ module.exports = {
         }
         this.walkAndReplace(
             folderPath,
-            ['.js', '.jsx', '.ts', '.tsx', '.html'],
+            ['.js', '.jsx', '.ts', '.tsx', '.html', '.json'],
             {
                 ProjectName: answers.projectName.replace(/^[a-z]/, l => l.toUpperCase()),
                 projectName: answers.projectName.replace(/^[A-Z]/, L => L.toLowerCase()),

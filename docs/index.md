@@ -7,7 +7,7 @@
     $ npm i -g steamerjs@latest steamer-plugin-ykit@latest
     ```
 
-        注意： 这个脚手架依赖的steamerjs和steamer-plugin-ykit版本>=3.0.0
+        注意： 这个脚手架依赖的steamerjs>=3.0.0, steamer-plugin-ykit>=3.0.5
 
 - 安装脚手架
 
@@ -29,7 +29,7 @@
     ``` shell
     $ str ykit -u --global
     ```
--更新脚手架到项目
+- 更新脚手架到项目
    ``` shell
    # cd 到你项目根目录
    $ str ykit -u
