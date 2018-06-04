@@ -22,6 +22,8 @@ let config = {
     // ========================= webpack环境配置 =========================
     env: __env,
 
+    appEnv: __app_env,
+
     // 默认使用的npm命令行
     npm: 'npm',
 
@@ -42,8 +44,8 @@ let config = {
 
         // ========================= webpack服务器及路由配置 =========================
         // 开发服务器配置
-        webserver: steamerConfig.webserver,
-        cdn: steamerConfig.cdn,
+        webserver: `${steamerConfig.webserver}:${steamerConfig.port}/`,
+        cdn: `${steamerConfig.cdn}/<% projectName %>/dist/${__app_env}/`,
         cssCdn: steamerConfig.cssCdn || steamerConfig.cdn,
         imgCdn: steamerConfig.imgCdn || steamerConfig.cdn,
         port: steamerConfig.port, // port for local server
