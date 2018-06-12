@@ -30,6 +30,7 @@ module.exports = {
     },
     beforeInstallDep: function(answers, folderPath) {
         const pkg = this.getPkgJson(folderPath)
+        let pkgHasChanged = false
         if (!!answers.mobx) {
             pkgHasChanged = true
             pkg.dependencies = Object.assign({}, pkg.dependencies, {
