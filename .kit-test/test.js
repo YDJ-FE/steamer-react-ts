@@ -10,7 +10,7 @@ const path = require("path"),
     compareVersions = require("compare-versions"),
     cp = require("child_process"),
     spawnSync = cp.spawnSync,
-    SteamerKit = require("steamer-plugin-ykit");
+    SteamerKit = require("steamer-plugin-kit");
 
 var nodeVer = process.version.replace("V", "").replace("v", ""),
     isNode8 = compareVersions(nodeVer, "8.0.0") > -1;
@@ -69,7 +69,7 @@ describe("install starterkit", function() {
     });
 
     it("install", function(done) {
-        this.timeout(100000);
+        this.timeout(999999);
         let kit = new SteamerKit({});
         kit.kitHomePath = path.join(process.cwd(), "../../");
         kit.kitOptionsPath = kitOptionsPath;
@@ -99,6 +99,7 @@ describe("install starterkit", function() {
         userInput("data", "\n", 6);
         userInput("data", "\n", 7);
         userInput("data", "y\n", 8);
+        userInput("data", "y\n", 9);
 
         userInputEnd(() => {
             // console.log(fs.readdirSync(PROJECT))

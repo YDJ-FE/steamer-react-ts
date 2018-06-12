@@ -1,0 +1,24 @@
+@import "styles/_base";
+
+.pageContainer {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    background: #f0f2f5;
+}
+
+.leftWrapper {
+    margin-right: 10%;
+}
+
+.pageTitle {
+    color: #434e59;
+    font-size: 70px;
+}
+
+.pageDescription {
+    color: rgba(#000, 0.45);
+    font-size: 20px;
+}

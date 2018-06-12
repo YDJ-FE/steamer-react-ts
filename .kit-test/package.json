@@ -17,6 +17,6 @@
     "sinon": "^5.0.10"
   },
   "devDependencies": {
-    "steamer-plugin-ykit": "^3.0.1"
+    "steamer-plugin-kit": "^3.0.0-beta.11"
   }
 }
