@@ -60,6 +60,7 @@
         "express": "^4.16.3",
         "file-loader": "^1.1.11",
         "file-webpack-plugin": "^2.0.0",
+        "fs-extra": "^6.0.1",
         "hoist-non-react-statics": "^2.5.0",
         "html-loader": "^0.5.5",
         "html-res-webpack-plugin": "^4.0.0",
