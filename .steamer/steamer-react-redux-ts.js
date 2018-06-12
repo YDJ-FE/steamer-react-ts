@@ -1,5 +1,6 @@
 const fs = require('fs')
 const path = require('path')
+const replaceReduxFilesToMobx = require('./replace-redux-files-to-mobx')
 
 const files = [
     'config',
@@ -28,8 +29,36 @@ module.exports = {
         }
     },
     beforeInstallDep: function(answers, folderPath) {
+        const pkg = this.getPkgJson(folderPath)
+        if (!!answers.mobx) {
+            pkgHasChanged = true
+            pkg.dependencies = Object.assign({}, pkg.dependencies, {
+                mobx: '^5.0.0',
+                'mobx-react': '^5.2.2'
+            })
+            const rmMods = {
+                dependencies: [
+                    'react-redux',
+                    'react-router-redux',
+                    'redux',
+                    'redux-immutable',
+                    'redux-saga',
+                    'reselect'
+                ],
+                devDependencies: [
+                    '@types/react-redux',
+                    '@types/react-router-redux'
+                ]
+            }
+            for (const dep of Object.keys(rmMods)) {
+                for (const mod of rmMods[dep]) {
+                    pkg[dep][mod] = undefined
+                }
+            }
+            replaceReduxFilesToMobx(folderPath)
+        }
         if (!!answers.jest) {
-            let pkg = this.getPkgJson(folderPath)
+            pkgHasChanged = true
             pkg.dependencies = Object.assign({}, pkg.dependencies, {
                 enzyme: '^3.3.0',
                 jest: '^22.4.4'
@@ -43,6 +72,8 @@ module.exports = {
                 test: 'jest',
                 coverage: 'jest --coverage'
             })
+        }
+        if (pkgHasChanged) {
             fs.writeFileSync(
                 path.join(folderPath, 'package.json'),
                 JSON.stringify(pkg, null, 4),
@@ -81,6 +112,12 @@ module.exports = {
             type: 'confirm',
             name: 'jest',
             message: 'wanna use jest to unit test?(N)',
+            default: false
+        },
+        {
+            type: 'confirm',
+            name: 'mobx',
+            message: 'wanna use mobx instead of redux?(N)',
             default: false
         }
     ]
