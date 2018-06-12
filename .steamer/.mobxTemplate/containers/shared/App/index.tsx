@@ -7,7 +7,7 @@
  */
 
 import * as React from "react";
-import { Switch, Route } from "react-router-dom";
+import { HashRouter as Router, Switch, Route } from "react-router-dom";
 
 import HomePage from "containers/views/Home";
 import NotFoundPage from "containers/views/NotFound";
@@ -22,12 +22,14 @@ const AppWrapper = props => (
 export default function App(props) {
     return (
         <AppWrapper>
-            <Switch>
-                <Route exact path="/" component={HomePage} />
-                <Route path="*" component={NotFoundPage} />
-                {/* <Route path="/features" component={FeaturePage} />
-                <Route path="" component={NotFoundPage} /> */}
-            </Switch>
+            <Router>
+                <Switch>
+                    <Route exact path="/" component={HomePage} />
+                    <Route path="*" component={NotFoundPage} />
+                    {/* <Route path="/features" component={FeaturePage} />
+                    <Route path="" component={NotFoundPage} /> */}
+                </Switch>
+            </Router>
         </AppWrapper>
     );
 }

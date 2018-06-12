@@ -10,7 +10,7 @@ interface IP {
 
 @inject('globalStore')
 @observer
-class Home extends React.PureComponent<IP> {
+class Home extends React.Component<IP> {
     @computed
     get hello() {
         const { test } = this.props.globalStore

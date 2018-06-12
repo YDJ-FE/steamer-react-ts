@@ -35,7 +35,7 @@ const MOUNT_NODE = document.getElementById("root");
 
 const render = (Component) => {
     ReactDOM.render(
-        <Provider store={store}>
+        <Provider {...store}>
             <Component />
         </Provider>,
         MOUNT_NODE

@@ -2,7 +2,7 @@ import { observable, action } from 'mobx'
 
 export class globalStore {
     @observable test: IGlobalStore.Test = {
-        hello: ''
+        hello: 'hello mobx!'
     }
 
     @action

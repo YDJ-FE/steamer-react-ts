@@ -8,7 +8,7 @@ interface IP {
 }
 
 @observer
-class <% Title %> extends React.PureComponent<IP> {
+class <% Title %> extends React.Component<IP> {
     render() {
         return <div>
             <h1>Hello World!</h1>
