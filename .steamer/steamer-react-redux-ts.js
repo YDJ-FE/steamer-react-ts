@@ -53,7 +53,7 @@ module.exports = {
             }
             for (const dep of Object.keys(rmMods)) {
                 for (const mod of rmMods[dep]) {
-                    pkg[dep][mod] = undefined
+                    delete pkg[dep][mod]
                 }
             }
             replaceReduxFilesToMobx(folderPath)
