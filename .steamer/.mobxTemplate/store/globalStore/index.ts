@@ -1,6 +1,6 @@
 import { observable, action } from 'mobx'
 
-export class globalStore {
+export class GlobalStore {
     @observable test: IGlobalStore.Test = {
         hello: 'hello mobx!'
     }
@@ -11,4 +11,4 @@ export class globalStore {
     }
 }
 
-export default new globalStore()
+export default new GlobalStore()
