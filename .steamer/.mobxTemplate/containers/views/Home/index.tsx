@@ -5,7 +5,7 @@ import { computed } from 'mobx'
 import * as styles from "./style.scss";
 
 interface IP {
-    globalStore: IGlobalStore.globalStore
+    globalStore: IGlobalStore.GlobalStore
 }
 
 @inject('globalStore')
