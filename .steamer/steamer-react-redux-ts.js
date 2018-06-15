@@ -56,7 +56,7 @@ module.exports = {
                     delete pkg[dep][mod]
                 }
             }
-            replaceReduxFilesToMobx(folderPath)
+            replaceReduxFilesToMobx.bind(this)(folderPath)
         }
         if (!!answers.jest) {
             pkgHasChanged = true
