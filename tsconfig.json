@@ -1,7 +1,7 @@
 {
     "compilerOptions": {
         "target": "es5",
-        "module": "commonjs",
+        "module": "esnext",
         "moduleResolution": "node",
         "allowSyntheticDefaultImports": true,
         "sourceMap": true,
@@ -11,6 +11,7 @@
         "importHelpers": true,
         "experimentalDecorators": true,
         "jsx": "react",
+        "skipLibCheck": true,
         "typeRoots": ["node_modules/@types", "./typings"],
         "lib": [
             "es5",
