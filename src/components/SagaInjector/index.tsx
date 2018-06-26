@@ -2,18 +2,15 @@
  * 高阶组件 注入saga
  *
  */
-import * as React from "react";
-import * as PropTypes from "prop-types";
-// 此模块声明为export = xxx； 必须要ts特殊语句导入 import xxx = require('xxx')
-import hoisNonReactStatics = require("hoist-non-react-statics");
-
-import getInjectors from "util/sagaInjectors";
-
-import { SagaIterator } from "redux-saga";
+import * as React from 'react'
+import * as PropTypes from 'prop-types'
+import hoisNonReactStatics from 'hoist-non-react-statics'
+import getInjectors from 'util/sagaInjectors'
+import { SagaIterator } from 'redux-saga'
 
 interface IP {
-    store: IStore<any>;
-    [key: string]: any;
+    store: IStore<any>
+    [key: string]: any
 }
 
 interface IInjectSagaParams {
@@ -23,15 +20,15 @@ interface IInjectSagaParams {
      * @type {string}
      * @memberof IInjectSagaParams
      */
-    key: string;
+    key: string
     /**
      * saga对象
      *
      * @type {SagaIterator}
      * @memberof IInjectSagaParams
      */
-    saga: SagaIterator;
-    mode?: string;
+    saga: SagaIterator
+    mode?: string
 }
 
 /**
@@ -49,33 +46,33 @@ export default ({ key, saga, mode }: IInjectSagaParams) => (
     WrappedComponent: React.ComponentType<any>
 ) => {
     class InjectSaga extends React.Component<IP> {
-        static WrappedComponent = WrappedComponent;
+        static WrappedComponent = WrappedComponent
         static displayName = `withSaga(${WrappedComponent.displayName ||
             WrappedComponent.name ||
-            "Component"})`;
+            'Component'})`
 
         static contextTypes = {
             store: PropTypes.object.isRequired
-        };
+        }
 
         componentWillMount() {
-            const { injectSaga } = this.injectors;
+            const { injectSaga } = this.injectors
 
-            injectSaga(key, { saga, mode }, this.props);
+            injectSaga(key, { saga, mode }, this.props)
         }
 
         componentWillUnmount() {
-            const { ejectSaga } = this.injectors;
+            const { ejectSaga } = this.injectors
 
-            ejectSaga(key);
+            ejectSaga(key)
         }
 
         // tslint:disable-next-line:member-ordering
-        injectors = getInjectors(this.context.store);
+        injectors = getInjectors(this.context.store)
 
         render() {
-            return <WrappedComponent {...this.props} />;
+            return <WrappedComponent {...this.props} />
         }
     }
-    return hoisNonReactStatics<IP, any>(InjectSaga, WrappedComponent);
-};
+    return hoisNonReactStatics<IP, any>(InjectSaga, WrappedComponent)
+}

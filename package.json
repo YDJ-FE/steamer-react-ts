@@ -1,6 +1,6 @@
 {
     "name": "steamer-react-redux-ts",
-    "version": "1.4.0",
+    "version": "1.4.1-dev.1",
     "description": "伊的家 react+redux+ts脚手架",
     "license": "MIT",
     "scripts": {
@@ -61,7 +61,7 @@
         "file-loader": "^1.1.11",
         "file-webpack-plugin": "^2.0.0",
         "fs-extra": "^6.0.1",
-        "hoist-non-react-statics": "^2.5.0",
+        "hoist-non-react-statics": "^2.5.5",
         "html-loader": "^0.5.5",
         "html-res-webpack-plugin": "^4.0.0",
         "http-proxy-middleware": "^0.18.0",

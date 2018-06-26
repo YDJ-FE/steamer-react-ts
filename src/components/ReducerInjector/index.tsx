@@ -8,9 +8,7 @@ import { ReactPropTypes } from "react";
 import getInjectors, { RESET_SUB_STATE } from "util/reducerInjectors";
 import { Reducer } from "redux";
 import * as PropTypes from "prop-types";
-
-// 此模块声明为export = xxx； 必须要ts特殊语句导入 import xxx = require('xxx')
-import hoisNonReactStatics = require("hoist-non-react-statics");
+import hoisNonReactStatics from 'hoist-non-react-statics'
 
 interface IP {
     store: IStore<any>;
