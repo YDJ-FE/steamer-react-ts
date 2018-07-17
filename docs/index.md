@@ -61,3 +61,9 @@
 支持选择 mobx
 
 [详情点击](./store.md)
+
+## 可选的 svg 支持
+
+使用[@svgr/webpack](https://github.com/smooth-code/svgr/tree/master/packages/webpack)
+
+[详情点击](./svg.md)
