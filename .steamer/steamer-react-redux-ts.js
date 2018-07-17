@@ -1,6 +1,7 @@
 const fs = require('fs')
 const path = require('path')
 const replaceReduxFilesToMobx = require('./replace-redux-files-to-mobx')
+const supportSvgComponent = require('./support-svg-component')
 
 const onInstall = function(folderPath, config) {
     const pkg = this.getPkgJson(folderPath)
@@ -20,10 +21,7 @@ const onInstall = function(folderPath, config) {
                 'redux-saga',
                 'reselect'
             ],
-            devDependencies: [
-                '@types/react-redux',
-                '@types/react-router-redux'
-            ]
+            devDependencies: ['@types/react-redux', '@types/react-router-redux']
         }
         for (const dep of Object.keys(rmMods)) {
             for (const mod of rmMods[dep]) {
@@ -31,6 +29,13 @@ const onInstall = function(folderPath, config) {
             }
         }
         replaceReduxFilesToMobx.bind(this)(folderPath)
+    }
+    if (!!config.svg) {
+        pkgHasChanged = true
+        pkg.devDependencies = Object.assign({}, pkg.devDependencies, {
+            '@svgr/webpack': '^2.1.1'
+        })
+        supportSvgComponent.bind(this)(folderPath)
     }
     if (!!config.jest) {
         pkgHasChanged = true
@@ -59,8 +64,12 @@ const onInstall = function(folderPath, config) {
         folderPath,
         ['.js', '.jsx', '.ts', '.tsx', '.html', '.json'],
         {
-            ProjectName: config.projectName.replace(/^[a-z]/, l => l.toUpperCase()),
-            projectName: config.projectName.replace(/^[A-Z]/, L => L.toLowerCase()),
+            ProjectName: config.projectName.replace(/^[a-z]/, l =>
+                l.toUpperCase()
+            ),
+            projectName: config.projectName.replace(/^[A-Z]/, L =>
+                L.toLowerCase()
+            )
         }
     )
 }
@@ -85,20 +94,22 @@ module.exports = {
         'tslint.json'
     ],
     beforeInstallCopy: function(answers, folderPath, files) {
-        console.log('------------- beforeInstallCopy -------------');
+        console.log('------------- beforeInstallCopy -------------')
         if (!!answers.jest) {
             files.push('test', 'jest.config.js')
         }
     },
     beforeInstallDep: function(answers, folderPath) {
-        console.log('------------- beforeInstallDep -------------');
-        onInstall.bind(this)(folderPath, answers);
+        console.log('------------- beforeInstallDep -------------')
+        onInstall.bind(this)(folderPath, answers)
     },
     beforeUpdateDep: function() {
-        console.log('------------- beforeUpdateDep -------------');
-        const folderPath = process.cwd();
-        const answersConfig = this.readKitConfig(path.join(folderPath, 'config/steamer.config.js'));
-        onInstall.bind(this)(folderPath, answersConfig);
+        console.log('------------- beforeUpdateDep -------------')
+        const folderPath = process.cwd()
+        const answersConfig = this.readKitConfig(
+            path.join(folderPath, 'config/steamer.config.js')
+        )
+        onInstall.bind(this)(folderPath, answersConfig)
     },
     options: [
         {
@@ -129,6 +140,12 @@ module.exports = {
             type: 'confirm',
             name: 'mobx',
             message: 'wanna use mobx instead of redux?(N)',
+            default: false
+        },
+        {
+            type: 'confirm',
+            name: 'svg',
+            message: 'support svg component?(N)',
             default: false
         }
     ]
