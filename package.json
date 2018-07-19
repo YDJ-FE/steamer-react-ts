@@ -1,6 +1,6 @@
 {
     "name": "steamer-react-redux-ts",
-    "version": "1.4.2",
+    "version": "1.4.3",
     "description": "伊的家 react+redux+ts脚手架",
     "license": "MIT",
     "scripts": {
