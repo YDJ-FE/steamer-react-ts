@@ -1,3 +1,5 @@
 # js
 
-TODO
+Only Typescript!
+
+TODO: 待完善

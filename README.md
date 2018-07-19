@@ -1,10 +1,14 @@
-# steamer-react-redux-ts
+# steamer-react-ts
 
-伊的家 react + redux + ts 项目脚手架
+伊的家前端出品： react + typescript 项目脚手架
+
+## 说明
+
+本脚手架基于AlloyTeam出品的steamer体系制作，详情[请点击前往](https://steamerjs.github.io/)
 
 ## 使用文档
 
-[飞机票](docs/index.md)
+[点击前往](docs/index.md)
 
 PS: 以上内容请在实际项目里面删除，并替换掉自身项目的说明， 比如
 
