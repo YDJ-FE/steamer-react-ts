@@ -1,40 +1,57 @@
-## 使用
-
--   确保你本地已经成功全局安装 `steamerjs`和 `steamer-plugin-ykit` 两个包
+## 环境准备
+-  本脚手架依赖`steamerjs`和`steamer-plugin-kit`两个包 
 
     ```shell
-    $ npm i -g steamerjs@latest steamer-plugin-ykit@latest
+    $ npm i -g steamerjs@latest steamer-plugin-kit@latest
     ```
 
-          注意： 这个脚手架依赖的steamerjs>=3.0.0, steamer-plugin-ykit>=3.0.5
+          注意： 这个脚手架依赖的steamerjs>=3.0.0
+
+## 使用
+
+-   确保环境依赖正确
+
+    ```shell
+    $ str --verion
+    # 检查版本是否大于3.0.0
+
+    $ str kit --version
+    # 检查版本是否大于3.0.0
+    ```
+
+    如果没有正确打印版本号，请[前往安装依赖](#环境准备)
 
 -   安装脚手架
 
     ```shell
-    $ str ykit --add https://github.com/YDJ-FE/steamer-react-redux-ts.git
+    $ str kit --add https://github.com/YDJ-FE/steamer-react-ts
     ```
 
 -   创建项目
 
     ```shell
-    $ str ykit
+    $ str kit
     # 选择脚手架, 版本，按引导一步一步输入项目信息
-
-    # 创建完成后，部分文件可能根据实际情况修改一些配置信息，
-    # 比如qshell.*.json, package.json, config/project.js等等
     ```
 
 -   更新脚手架
 
     ```shell
-    $ str ykit -u --global
+    $ str kit -u --global
     ```
 
 -   更新脚手架到项目
     ```shell
     # cd 到你项目根目录
-    $ str ykit -u
+    $ str kit -u
     ```
+
+-  添加模板代码到项目
+  
+   ```shell
+   $ str template
+   # 按提示操作
+   ```
 
 ## 文件目录
 
