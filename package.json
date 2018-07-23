@@ -1,7 +1,7 @@
 {
-    "name": "steamer-react-redux-ts",
+    "name": "steamer-react-ts",
     "version": "1.4.3",
-    "description": "伊的家 react+redux+ts脚手架",
+    "description": "伊的家 react+ts脚手架",
     "license": "MIT",
     "scripts": {
         "dev": "cross-env NODE_ENV=development node ./tools/script.js",
