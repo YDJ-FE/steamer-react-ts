@@ -1,14 +1,15 @@
-import * as React from "react";
+import * as React from 'react'
 import { observer, inject } from 'mobx-react'
 import { computed } from 'mobx'
 
-import * as styles from "./style.scss";
+import * as styles from './style.scss'
 
 interface IP {
     globalStore: IGlobalStore.GlobalStore
+    routerStore: RouterStore
 }
 
-@inject('globalStore')
+@inject('globalStore', 'routerStore')
 @observer
 class Home extends React.Component<IP> {
     @computed
@@ -17,11 +18,19 @@ class Home extends React.Component<IP> {
         return test ? test.hello : ''
     }
 
+    routerTest = () => {
+        this.props.routerStore.push('/error')
+    }
+
     render() {
-        return <div>
-            <h1>Hello World!</h1>
-            {this.hello}
-        </div>;
+        return (
+            <div>
+                <h1 className={styles.routerTest} onClick={this.routerTest}>
+                    Hello World!
+                </h1>
+                {this.hello}
+            </div>
+        )
     }
 }
 
