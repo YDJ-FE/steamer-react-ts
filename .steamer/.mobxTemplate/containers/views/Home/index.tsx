@@ -6,7 +6,7 @@ import * as styles from './style.scss'
 
 interface IP {
     globalStore: IGlobalStore.GlobalStore
-    routingStore: RouterStore
+    routerStore: RouterStore
 }
 
 @inject('globalStore', 'routingStore')
@@ -18,14 +18,14 @@ class Home extends React.Component<IP> {
         return test ? test.hello : ''
     }
 
-    routingTest = () => {
-        this.props.routingStore.push('/error')
+    routerTest = () => {
+        this.props.routerStore.push('/error')
     }
 
     render() {
         return (
             <div>
-                <h1 className={styles.routingTest} onClick={this.routingTest}>
+                <h1 className={styles.routerTest} onClick={this.routerTest}>
                     Hello World!
                 </h1>
                 {this.hello}
