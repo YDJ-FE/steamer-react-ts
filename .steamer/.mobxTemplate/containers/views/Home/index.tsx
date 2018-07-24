@@ -9,7 +9,7 @@ interface IP {
     routerStore: RouterStore
 }
 
-@inject('globalStore', 'routingStore')
+@inject('globalStore', 'routerStore')
 @observer
 class Home extends React.Component<IP> {
     @computed
