@@ -34,7 +34,7 @@ import * as store from './store'
 configure({ enforceActions: true })
 
 const hashHistory = createHashHistory()
-const history = syncHistoryWithStore(hashHistory, store.routingStore)
+const history = syncHistoryWithStore(hashHistory, store.routerStore)
 
 const MOUNT_NODE = document.getElementById('root')
 
