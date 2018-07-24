@@ -25,9 +25,10 @@ class Home extends React.Component<IP> {
     render() {
         return (
             <div>
-                <h1>Hello World!</h1>
+                <h1 className={styles.routingTest} onClick={this.routingTest}>
+                    Hello World!
+                </h1>
                 {this.hello}
-                <a href="javascript: void(0);" onClick={this.routingTest} />
             </div>
         )
     }
