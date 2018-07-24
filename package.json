@@ -44,6 +44,7 @@
         "@types/react-dom": "^16.0.5",
         "@types/react-hot-loader": "^4.1.0",
         "@types/react-redux": "^6.0.0",
+        "@types/react-router-dom": "^4.3.0",
         "@types/react-router-redux": "^5.0.13",
         "@types/webpack-env": "^1.13.6",
         "autoprefixer": "^8.3.0",
