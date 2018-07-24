@@ -10,7 +10,8 @@ const onInstall = function(folderPath, config) {
         pkgHasChanged = true
         pkg.dependencies = Object.assign({}, pkg.dependencies, {
             mobx: '^5.0.0',
-            'mobx-react': '^5.2.2'
+            'mobx-react': '^5.2.2',
+            'mobx-react-router': '^4.0.4'
         })
         const rmMods = {
             dependencies: [

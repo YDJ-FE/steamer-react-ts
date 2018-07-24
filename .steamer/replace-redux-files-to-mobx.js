@@ -27,6 +27,11 @@ module.exports = function(folderPath) {
     const typingsPath = path.join(folderPath, 'typings')
     this.fs.removeSync(path.join(typingsPath, 'redux-store.shim.d.ts'))
     this.fs.removeSync(path.join(typingsPath, 'redux.shim.d.ts'))
+    // 添加router.d.ts到typings
+    this.fs.copySync(
+        path.join(mobxTemplatePath, 'typings/router.d.ts'),
+        path.join(typingsPath, 'router.d.ts')
+    )
 
     // 删除/修改components中redux相关的组件
     const componentsPath = path.join(folderPath, 'src/components')
