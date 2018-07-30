@@ -23,7 +23,15 @@
             "dom"
         ]
     },
-    "exclude": ["**/node_modules/*"],
+
+    "include": [
+        "src/**/*.d.ts",
+        "typings"
+    ],
+    "files": [
+        "src/app.tsx"
+    ],
+    
 
     "awesomeTypescriptLoaderOptions": {
         "reportFiles": ["src/**/*.{ts,tsx}"]
