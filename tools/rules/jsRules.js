@@ -1,3 +1,4 @@
+const path = require('path')
 
 module.exports = function(config) {
 
@@ -7,7 +8,10 @@ module.exports = function(config) {
         {
             test: /\.(tsx?|js)$/,
             loader: 'awesome-typescript-loader',
-            exclude: /node_modules/
+            exclude: /node_modules/,
+            options: {
+                configFileName: path.join(__dirname, '../../tsconfig.webpack.json')
+            }
         }
     ];
 

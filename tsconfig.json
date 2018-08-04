@@ -25,13 +25,9 @@
     },
 
     "include": [
-        "src/**/*.d.ts",
+        "src/**/*",
         "typings"
     ],
-    "files": [
-        "src/app.tsx"
-    ],
-    
 
     "awesomeTypescriptLoaderOptions": {
         "reportFiles": ["src/**/*.{ts,tsx}"]
