@@ -92,6 +92,7 @@ module.exports = {
         'qshell.prod.json',
         'README.md',
         'tsconfig.json',
+        'tsconfig.webpack.json',
         'tslint.json'
     ],
     beforeInstallCopy: function(answers, folderPath, files) {
