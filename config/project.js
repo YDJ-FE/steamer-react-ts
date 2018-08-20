@@ -46,8 +46,8 @@ let config = {
         // 开发服务器配置
         webserver: `${steamerConfig.webserver}:${steamerConfig.port}/`,
         cdn: `${steamerConfig.cdn}/<% projectName %>/dist/${__app_env}/`,
-        cssCdn: steamerConfig.cssCdn || steamerConfig.cdn,
-        imgCdn: steamerConfig.imgCdn || steamerConfig.cdn,
+        cssCdn: `${steamerConfig.cssCdn || steamerConfig.cdn}/<% projectName %>/dist/${__app_env}/`,
+        imgCdn: `${steamerConfig.imgCdn || steamerConfig.cdn}/<% projectName %>/dist/${__app_env}/`,
         port: steamerConfig.port, // port for local server
         route: [], // proxy route, 例如: /news/
 
